@@ -1,0 +1,294 @@
+<html>
+<head>
+	<title>canvas</title>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+   <h1>canvas</h1>
+   <h3>7.1 canvas 描述 </h3>
+   <p>HTML5 canvas 标签用于绘制图像（通过脚本，通常是 JavaScript）。
+   <p>不过,canvas元素本身并没有绘制能力（它仅仅是图形的容器）,您必须使用脚本来完成实际的绘图任务。
+   <p>getContext()方法可返回一个对象，该对象提供了用于在画布上绘图的方法和属性。
+   <h3>7.2 canvas 属性</h3>
+    <p>fillStyle:设置或返回用于填充绘画的颜色、渐变或模式</p>
+    <p>strokeStyle:设置或返回用于笔触的颜色、渐变或模式</p>
+   <h3>7.3 canvas 方法</h3>
+    <p>fillStyle:设置或返回用于填充绘画的颜色、渐变或模式
+   	<p>strokeStyle:设置或返回用于笔触的颜色、渐变或模式
+   	<p>createLinearGradient():创建线性渐变（用在画布内容上）
+   	<p>lineWidth:设置或返回当前的线条宽度
+   	<p>rect():创建矩形
+   	<p>fillRect():绘制“被填充”的矩形
+   	<p>fill():填充当前绘图（路径）
+   	<p>stroke():绘制已定义的路径
+   	<p>beginPath():起始一条路径，或重置当前路径
+   	<p>moveTo():把路径移动到画布中的指定点，不创建线条
+   	<p>closePath():创建从当前点回到起始点的路径
+   	<p>lineTo():添加一个新点，然后在画布中创建从该点到最后指定点的线条
+   	<p>bezierCurveTo():创建三次方贝塞尔曲线
+   	<p>drawImage():向画布上绘制图像、画布或视频
+
+   	<h3>7.4 实例展示</h3>
+   	
+    <canvas id="canvas" width="1000" height="2000"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d'); 
+			
+			ctx.lineWidth=3;
+			ctx.strokeStyle="#360B02";
+			ctx.beginPath();
+			ctx.moveTo(500,300);
+			ctx.quadraticCurveTo(300,300,250,500);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(500,300);
+			ctx.quadraticCurveTo(700,300,750,500);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(250,500);
+			ctx.quadraticCurveTo(230,520,210,570);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(750,500);
+			ctx.quadraticCurveTo(770,520,790,570);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(210,570);
+			ctx.bezierCurveTo(120,600,100,700,160,700);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(210,570);
+			ctx.bezierCurveTo(230,550,280,650,160,700);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.arc(400,430,30,0,2*Math.PI);
+			ctx.closePath();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.arc(600,430,30,0,2*Math.PI);
+			ctx.closePath();
+			ctx.stroke();
+			
+			ctx.fillStyle="#360B02";
+			ctx.beginPath();
+			ctx.arc(410,435,10,0,2*Math.PI);
+			ctx.closePath();
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(590,435,10,0,2*Math.PI);
+			ctx.closePath();
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.moveTo(470,450);
+			ctx.quadraticCurveTo(500,420,530,450);
+			ctx.closePath();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(370,510);
+			ctx.quadraticCurveTo(500,580,630,510);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(370,510);
+			ctx.bezierCurveTo(300,490,700,490,630,510);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(320,440);
+			ctx.lineTo(220,400);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(320,460);
+			ctx.lineTo(200,430);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(320,480);
+			ctx.lineTo(200,480);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(680,440);
+			ctx.lineTo(790,410);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(680,460);
+			ctx.lineTo(830,450);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(680,480);
+			ctx.lineTo(800,490);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(500,496);
+			ctx.lineTo(500,546);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(450,496);
+			ctx.lineTo(450,540);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(400,496);
+			ctx.lineTo(400,526);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(550,496);
+			ctx.lineTo(550,540);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(600,496);
+			ctx.lineTo(600,526);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(340,330);
+			ctx.lineTo(325,330);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(340,325);
+			ctx.lineTo(325,325);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(340,315);
+			ctx.lineTo(325,315);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(340,305);
+			ctx.lineTo(325,305);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(380,320);
+			ctx.lineTo(365,320);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(380,315);
+			ctx.lineTo(365,315);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(380,305);
+			ctx.lineTo(365,305);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(660,330);
+			ctx.lineTo(675,330);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(660,325);
+			ctx.lineTo(675,325);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(660,315);
+			ctx.lineTo(675,315);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(660,305);
+			ctx.lineTo(675,305);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(620,320);
+			ctx.lineTo(635,320);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(620,315);
+			ctx.lineTo(635,315);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(620,305);
+			ctx.lineTo(635,305);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(340,350);
+			ctx.lineTo(340,300);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(660,350);
+			ctx.lineTo(660,300);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(370,330);
+			ctx.lineTo(370,300);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(630,330);
+			ctx.lineTo(630,300);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(340,300);
+			ctx.lineTo(330,290);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(660,300);
+			ctx.lineTo(670,290);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(370,300);
+			ctx.lineTo(380,290);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(630,300);
+			ctx.lineTo(620,290);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(330,290);
+			ctx.lineTo(350,200);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(670,290);
+			ctx.lineTo(650,200);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(380,290);
+			ctx.lineTo(350,200);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(620,290);
+			ctx.lineTo(650,200);
+			ctx.stroke();
+			
+		</script>
+</body>
+</html>
