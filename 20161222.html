@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--<input type="file" name="" id="" value="请选择文件" />-->
+		<button id="btn">点我显示数据</button>
+		<div id="div">
+			显示区域
+		</div>
+		<script type="text/javascript">
+			/*var xhr = new XMLHttpRequest();
+						xhr.onreadystatechange = function(msg) {
+							if(xhr.readyState == 4) {
+								if(xhr.status == 200) {
+									document.getElementById("div").innerHTML = xhr.response;
+									console.log(msg.response);
+								}
+							}
+						}*/
+			/*xhr.onload = function(msg) {
+				document.getElementById("div").innerHTML = xhr.response;
+			}
+			xhr.open("GET", "ajaxfile/xhr.txt");
+			xhr.send();*/
+
+			/*xhr.onerror=function(error){
+				console.log(error);
+			}
+			
+			xhr.onload=function(msg){
+				console.log(msg);
+			}*/
+
+			var btn = document.getElementById('btn');
+			var div = document.getElementById('div');
+
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "data.json");
+			xhr.send();
+
+			xhr.onload = function(msg) {
+				btn.onclick = function(e) {
+					showDate();
+				}
+			}
+
+			function showDate() {
+				var arr=JSON.parse(xhr.responseText);
+				var l = arr.length;
+				var str = "<table border='1'>";
+				for(var i = 0; i < l; i++) {
+					var o = arr[i];
+					var s = "姓名：" + o.name + " 性别：" + o.sex;
+					str+="<tr><td>"+s+"</td></tr>";
+					/*console.log(arr[i])*/
+				}
+				str+="</table>";
+				div.innerHTML=str;
+			}
+
+			/*var arr = [{
+				"name": "张三",
+				"sex": "男",
+				"age": "25",
+				"phoneNumber": "132141230140",
+				"university": "浙江大学",
+				"major": "通信工程",
+				"college": "淘宝学院",
+				"入学年份": "1998"
+			}, {
+				"name": "李四",
+				"sex": "男",
+				"age": "23",
+				"phoneNumber": "15132130140",
+				"university": "温州大学",
+				"major": "通信工程",
+				"college": "淘宝学院",
+				"入学年份": "1998"
+			}, {
+				"name": "王五",
+				"sex": "男",
+				"age": "21",
+				"phoneNumber": "1123613140",
+				"university": "浙江大学",
+				"major": "通信工程",
+				"college": "阿里学院",
+				"入学年份": "1998"
+			}]*/
+		</script>
+	</body>
+
+</html>
